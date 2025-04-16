@@ -3,8 +3,8 @@ pipeline {
         choice(name: 'terraformAction', choices: ['apply', 'destroy'], description: 'Choose the Terraform action to perform')
     } 
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        aws_access-key     = credentials('aws_access-key')
+        AWS_secrete_key = credentials('AWS_secrete_key')
     }
 
     agent any
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     dir("terraform") {
-                        git branch: 'infra', url: 'https://github.com/ManojKRISHNAPPA/complete-cicd-project-microdegree.git'
+                        git branch: 'infra', url: 'https://github.com/Amith1777/complete-cicd-project-microdegree.git'
                     }
                 }
             }

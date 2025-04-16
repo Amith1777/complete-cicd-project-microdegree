@@ -3,7 +3,7 @@ pipeline {
         choice(name: 'terraformAction', choices: ['apply', 'destroy'], description: 'Choose the Terraform action to perform')
     } 
     environment {
-        aws_access-key = credentials('aws_access-key')
+        aws_access_key = credentials('aws_access_key')
         AWS_secrete_key = credentials('AWS_secrete_key')
     }
 
